@@ -10,9 +10,7 @@
 
 # next.js
 /.next/
-
-# Allow push of /out/ for GitHub Pages
-# /out/
+/out/
 
 # production
 /build
