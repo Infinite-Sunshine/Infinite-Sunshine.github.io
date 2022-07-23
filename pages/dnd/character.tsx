@@ -1,4 +1,4 @@
-import characters from './data'
+import characters from '../../data/dnd/characters'
 import {Flex, Heading, SimpleGrid, Stack, Text} from "@chakra-ui/react";
 
 export async function getStaticProps(context) {
