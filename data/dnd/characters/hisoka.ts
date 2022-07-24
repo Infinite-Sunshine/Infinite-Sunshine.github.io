@@ -69,7 +69,7 @@ export default // Hisoka
             {
                 name: 'Sneak in the attack',
                 classification: 'Rogue Utility 2',
-                effect: 'Until the start of your next turn, the next ally who hits the target and has combat advantage against it deals extra damage against it equal to your Sneak Attack damage.',
+                effect: 'Until the start of your next turn, the next ally who hits the target gains combat advantage against it and deals extra damage against it equal to your Sneak Attack damage.',
                 keywords: 'Martial',
                 action: 'Minor action',
                 attackType: 'Personal',
