@@ -1,5 +1,5 @@
 import characters from '../../../data/dnd/characters'
-import {Flex, Heading, SimpleGrid, Stack, Text} from "@chakra-ui/react";
+import {Box, Flex, Heading, SimpleGrid, Stack, Text} from "@chakra-ui/react";
 
 // This function gets called at build time and defines the props passed to default function
 export async function getStaticProps({params}) {
@@ -65,9 +65,9 @@ function Power({power, type}) {
 }
 
 function Powers({powers}) {
-    return (<>
-        <Heading size="h2">Powers</Heading>
-        <Stack>
+    return (<Box>
+        <Heading as="h3">Powers</Heading>
+        <Stack mb={4}>
             <Heading size="h3">At-Will</Heading>
             <SimpleGrid
                 columns={{
@@ -102,13 +102,49 @@ function Powers({powers}) {
                 {powers.encounter.map((power) => <Power power={power} type="Encounter"/>)}
             </SimpleGrid>
         </Stack>
-    </>);
+    </Box>);
+}
+
+function Feat({feat}) {
+    return (
+        <Stack spacing={0}>
+            {feat.name && <Text p={1}><b>{feat.name}</b></Text>}
+            {feat.benefit && <Text p={1}><b>Benefit:</b> {feat.benefit}</Text>}
+        </Stack>
+    );
+}
+
+function Feats({feats}) {
+    return (<Box>
+        <Heading as="h3">Feats</Heading>
+        <Stack>
+            <SimpleGrid
+                columns={{
+                    base: 1,
+                    md: 2,
+                    xl: 4
+                }}
+                spacing={2}
+            >
+                {feats.map((feat) => <Feat feat={feat}/>)}
+            </SimpleGrid>
+        </Stack>
+    </Box>);
 }
 
 export default function Character({character}) {
     return (
-        <Stack>
+        <Stack spacing={4}>
+            <Stack spacing={0}>
+                <Heading as="h1">{character.name}</Heading>
+                {character.race && <Text p={1}><b>Race:</b> {character.race}</Text>}
+                {character.class && <Text p={1}><b>Class:</b> {character.class}</Text>}
+                {character.alignment && <Text p={1}><b>Alignment:</b> {character.alignment}</Text>}
+                {character.deity && <Text p={1}><b>Deity:</b> {character.deity}</Text>}
+                {character.level && <Text p={1}><b>Level:</b> {character.level}</Text>}
+            </Stack>
             <Powers powers={character.powers}/>
+            <Feats feats={character.feats}/>
         </Stack>
     );
 }
