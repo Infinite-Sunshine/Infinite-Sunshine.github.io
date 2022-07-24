@@ -1,12 +1,26 @@
-import characters from '../../data/dnd/characters'
+import characters from '../../../data/dnd/characters'
 import {Flex, Heading, SimpleGrid, Stack, Text} from "@chakra-ui/react";
 
-export async function getStaticProps(context) {
+// This function gets called at build time and defines the props passed to default function
+export async function getStaticProps({params}) {
+    // Pass post data to the page via props
     return {
         props: {
-            character: characters.Omerius //TODO: make this dynamic
+            character: characters[params.name]
         },
     }
+}
+
+// This function gets called at build time and defines the paths
+export async function getStaticPaths() {
+    // Get the paths we want to pre-render based on posts
+    const paths = Object.keys(characters).map((key) => ({
+        params: {name: key},
+    }))
+
+    // We'll pre-render only these paths at build time.
+    // { fallback: false } means other routes should 404.
+    return {paths, fallback: false}
 }
 
 function Power({power, type}) {
@@ -38,8 +52,12 @@ function Power({power, type}) {
             {power.trigger && <Text p={1}><b>Trigger:</b> {power.trigger}</Text>}
             {power.target && <Text p={1}><b>Target:</b> {power.target}</Text>}
             {power.attack && <Text p={1}><b>Attack:</b> {power.attack}</Text>}
-            {power.miss && <Text p={1}><b>Miss:</b> {power.miss}</Text>}
             {power.hit && <Text p={1} bg={gradient}><b>Hit:</b> {power.hit}</Text>}
+            {power.wildMagic && <Text p={1}><b>Wild Magic:</b> {power.wildMagic}</Text>}
+            {power.secondaryTarget && <Text p={1}><b>Secondary Target:</b> {power.secondaryTarget}</Text>}
+            {power.secondaryAttack && <Text p={1}><b>Secondary Attack:</b> {power.secondaryAttack}</Text>}
+            {power.secondaryHit && <Text p={1} bg={gradient}><b>Secondary Hit:</b> {power.secondaryHit}</Text>}
+            {power.miss && <Text p={1}><b>Miss:</b> {power.miss}</Text>}
             {power.effect && <Text p={1}><b>Effect:</b> {power.effect}</Text>}
             {power.special && <Text p={1} bg={gradient}><b>Special:</b> {power.special}</Text>}
         </Stack>

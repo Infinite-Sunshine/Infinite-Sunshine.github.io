@@ -1,5 +1,7 @@
+import Hisoka from './hisoka'
 import Omerius from './omerius'
 
-const characters = {Omerius};
-
-export default characters;
+export default {
+    Hisoka,
+    Omerius
+}
