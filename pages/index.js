@@ -1,7 +1,7 @@
-import { Button, Flex, Heading, useColorMode } from "@chakra-ui/react";
+import {Button, Flex, Heading, useColorMode} from '@chakra-ui/react';
 
 export default function Home() {
-    const { toggleColorMode } = useColorMode()
+    const {toggleColorMode} = useColorMode();
 
     return (
         <Flex justifyContent="center">

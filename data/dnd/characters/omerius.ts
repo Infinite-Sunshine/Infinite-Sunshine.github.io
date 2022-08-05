@@ -11,7 +11,8 @@ export default // Omerius
             {
                 name: 'Lance of Faith',
                 classification: 'Cleric Attack 1',
-                flavorText: 'A brilliant ray of light sears your foe with golden radiance. Sparkles of light linger around the target, guiding your ally’s attack.',
+                flavorText:
+                    'A brilliant ray of light sears your foe with golden radiance. Sparkles of light linger around the target, guiding your ally’s attack.',
                 keywords: '✦ Divine, Implement, Radiant',
                 action: 'Standard Action',
                 attackType: 'Ranged',
@@ -23,7 +24,8 @@ export default // Omerius
             {
                 name: 'Astral Seal',
                 classification: 'Cleric Attack 1',
-                flavorText: 'You outline your enemy with the silver glow of the Astral Sea, and its healing light bathes your friend.',
+                flavorText:
+                    'You outline your enemy with the silver glow of the Astral Sea, and its healing light bathes your friend.',
                 keywords: '✦ Divine , Healing , Implement',
                 action: 'Standard Action',
                 attackType: 'Ranged',
@@ -37,19 +39,22 @@ export default // Omerius
             {
                 name: 'Bastion of Mental Clarity',
                 classification: 'Racial Feature',
-                flavorText: 'You erect a psychic shield to protect your mind from assault, and you ward your allies as well.',
+                flavorText:
+                    'You erect a psychic shield to protect your mind from assault, and you ward your allies as well.',
                 keywords: '',
                 action: 'Immediate Interrupt',
                 attackType: 'Close burst',
                 range: '5',
-                trigger: 'An enemy hits or misses you with an attack against your Will',
+                trigger:
+                    'An enemy hits or misses you with an attack against your Will',
                 target: 'You and each ally in burst',
                 effect: 'Each target gains a +4 power bonus to Will until the end of your next turn.',
             },
             {
                 name: 'Guardian of Faith',
                 classification: 'Cleric Attack 1',
-                flavorText: 'You conjure a ghostly guardian, indistinct except for a glowing shield emblazoned with your deity’s symbol. A burst of radiance erupts from it to sear foes that move next to it.',
+                flavorText:
+                    'You conjure a ghostly guardian, indistinct except for a glowing shield emblazoned with your deity’s symbol. A burst of radiance erupts from it to sear foes that move next to it.',
                 keywords: '✦ Conjuration, Divine, Implement, Radiant',
                 action: 'Standard Action',
                 attackType: 'Ranged',
@@ -64,7 +69,8 @@ export default // Omerius
                 action: 'Immediate Interrupt',
                 attackType: 'Ranged',
                 range: '20',
-                trigger: 'An ally within 20 squares of you fails a death saving throw',
+                trigger:
+                    'An ally within 20 squares of you fails a death saving throw',
                 target: 'The triggering ally',
                 effect: 'The target succeeds on the death saving throw and can spend a healing surge.',
             },
@@ -73,7 +79,8 @@ export default // Omerius
             {
                 name: 'Channel Divinity: Armor of Bahamut',
                 classification: 'Cleric Feature',
-                flavorText: 'Bahamut protects you or a friend from devastating harm.',
+                flavorText:
+                    'Bahamut protects you or a friend from devastating harm.',
                 keywords: '✦ Divine',
                 action: 'Immediate Interrupt',
                 attackType: 'Ranged',
@@ -84,7 +91,8 @@ export default // Omerius
             {
                 name: 'Channel Divinity: Divine Fortune',
                 classification: 'Cleric Feature',
-                flavorText: 'In the face of peril, you hold true to your faith and receive a special boon.',
+                flavorText:
+                    'In the face of peril, you hold true to your faith and receive a special boon.',
                 keywords: '✦ Divine',
                 action: 'Free Action',
                 attackType: 'Personal',
@@ -94,7 +102,8 @@ export default // Omerius
             {
                 name: 'Channel Divinity: Healer’s Mercy',
                 classification: 'Cleric Feature',
-                flavorText: 'Strength flows out from you to your injured comrades, rekindling their resolve to see the battle to its end.',
+                flavorText:
+                    'Strength flows out from you to your injured comrades, rekindling their resolve to see the battle to its end.',
                 keywords: '✦ Divine',
                 action: 'Standard Action',
                 attackType: 'Close burst',
@@ -105,19 +114,22 @@ export default // Omerius
             {
                 name: 'Healing Word',
                 classification: 'Cleric Feature',
-                flavorText: 'You whisper a brief prayer as divine light washes over your target, helping to mend its wounds.',
+                flavorText:
+                    'You whisper a brief prayer as divine light washes over your target, helping to mend its wounds.',
                 keywords: '✦ Divine, Healing',
                 action: 'Minor Action',
                 attackType: 'Close burst',
                 range: '5 (10 at 11th level, 15 at 21st level)',
-                trigger: 'An enemy hits or misses you with an attack against your Will',
+                trigger:
+                    'An enemy hits or misses you with an attack against your Will',
                 target: 'You and each ally in burst',
                 effect: 'The target can spend a healing surge and regain an additional 1d6 hit points. Increase the amount of additional hit points regained to 2d6 at 6th level, 3d6 at 11th level, 4d6 at 16th level, 5d6 at 21st level, and 6d6 at 26th level.',
             },
             {
                 name: 'Shield Bearer',
                 classification: 'Cleric Attack 1',
-                flavorText: 'A shimmering warrior steps from between the worlds to defend your allies.',
+                flavorText:
+                    'A shimmering warrior steps from between the worlds to defend your allies.',
                 keywords: '✦ Conjuration , Divine , Implement , Radiant',
                 action: 'Standard Action',
                 attackType: 'Ranged',
@@ -131,7 +143,8 @@ export default // Omerius
     rituals: [
         {
             name: 'Gentle Repose',
-            flavorText: 'Your practiced hands perform the ritual fast enough to preserve the body for a later casting of Raise Dead.',
+            flavorText:
+                'Your practiced hands perform the ritual fast enough to preserve the body for a later casting of Raise Dead.',
             level: '1',
             category: 'Restoration',
             time: '1 hour',
@@ -139,11 +152,13 @@ export default // Omerius
             componentCost: '10 gp',
             marketPrice: '50 gp',
             keySkill: 'Heal (no check)',
-            description: 'This ritual is performed on an adjacent corpse. It quintuples the time the corpse can lie dead and still be affected by Raise Dead or a similar ritual. Gentle Repose also protects the corpse from being raised as an undead creature for 150 days.',
+            description:
+                'This ritual is performed on an adjacent corpse. It quintuples the time the corpse can lie dead and still be affected by Raise Dead or a similar ritual. Gentle Repose also protects the corpse from being raised as an undead creature for 150 days.',
         },
         {
             name: 'Make Whole',
-            flavorText: 'As you finish the ritual, the oaken door stands whole and unblemished as if Orten the Rager hadn’t just burst through it with murder in his eyes. It’s the least you can do after using the inn to ambush the infamous barbarian.',
+            flavorText:
+                'As you finish the ritual, the oaken door stands whole and unblemished as if Orten the Rager hadn’t just burst through it with murder in his eyes. It’s the least you can do after using the inn to ambush the infamous barbarian.',
             level: '1',
             category: 'Exploration',
             time: '10 minutes',
@@ -151,17 +166,20 @@ export default // Omerius
             componentCost: 'Special',
             marketPrice: '50 gp',
             keySkill: 'Arcana (no check)',
-            description: 'A single object that can fit in a 10-foot cube is completely repaired. The component cost is 20 percent of the item’s cost. In cases where you attempt to repair an item not on any price list, the DM determines the cost.',
+            description:
+                'A single object that can fit in a 10-foot cube is completely repaired. The component cost is 20 percent of the item’s cost. In cases where you attempt to repair an item not on any price list, the DM determines the cost.',
         },
     ],
     feats: [
         {
             name: 'Armor of Bahamut [Divinity]',
-            benefit: 'You can invoke the power of your deity to use armor of Bahamut.'
+            benefit:
+                'You can invoke the power of your deity to use armor of Bahamut.',
         },
         {
             name: 'Defensive Healing Word',
-            benefit: 'When you use your healing word, the target also gains a power bonus to all defenses equal to your Charisma modifier against the next attack made against him or her.'
+            benefit:
+                'When you use your healing word, the target also gains a power bonus to all defenses equal to your Charisma modifier against the next attack made against him or her.',
         },
-    ]
-}
+    ],
+};
