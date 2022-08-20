@@ -1,11 +1,73 @@
 export default // Omerius
 {
     name: 'Omerius',
+    level: 2,
+    gender: 'Male',
+    height: `6'3"`,
+    weight: '200lbs',
     race: 'Kalashtar',
     class: 'Cleric',
+    size: 'Medium',
+    age: 20,
     alignment: 'Lawful Good',
     deity: 'Bahamut',
-    level: '2',
+    affiliations: 'Star-shaped Birthmark Crew',
+    paragonPath: '',
+    epicDestiny: '',
+    XP: '',
+    abilityScores: {
+        STR: 16,
+        CON: 10,
+        DEX: 10,
+        INT: 10,
+        WIS: 18,
+        CHA: 18,
+    },
+    defenseSpecialMods: {
+        ac: [],
+        fort: [],
+        ref: [],
+        will: [{type: 'class', bonus: 2}, {type: 'race', bonus: 4}],
+    },
+    speed: {base: 6},
+    senses: {
+        passiveInsight: 17,
+        passivePerception: 15,
+    },
+    hitPoints: {
+        current: 27,
+        max: 27,
+    },
+    healingSurges: {
+        value: 6,
+        perDay: 7,
+    },
+    actionPoints: 1,
+    skillMods: {
+        Arcana: [{
+            type: 'trained',
+            bonus: 5
+        }],
+        Diplomacy: [{
+            type: 'trained',
+            bonus: 5
+        }, {
+            type: 'class',
+            bonus: 2
+        }],
+        Heal: [{
+            type: 'trained',
+            bonus: 5
+        }],
+        Insight: [{
+            type: 'class',
+            bonus: 2
+        }],
+        Religion: [{
+            type: 'trained',
+            bonus: 5
+        }],
+    },
     powers: {
         atWill: [
             {
@@ -120,9 +182,10 @@ export default // Omerius
                 action: 'Minor Action',
                 attackType: 'Close burst',
                 range: '5 (10 at 11th level, 15 at 21st level)',
-                trigger:
-                    'An enemy hits or misses you with an attack against your Will',
-                target: 'You and each ally in burst',
+                special:
+                    'You can use this power twice per encounter, but only\n' +
+                    'once per round. At 16th level, you can use this power three\n',
+                target: 'You or one ally',
                 effect: 'The target can spend a healing surge and regain an additional 1d6 hit points. Increase the amount of additional hit points regained to 2d6 at 6th level, 3d6 at 11th level, 4d6 at 16th level, 5d6 at 21st level, and 6d6 at 26th level.',
             },
             {
@@ -182,4 +245,21 @@ export default // Omerius
                 'When you use your healing word, the target also gains a power bonus to all defenses equal to your Charisma modifier against the next attack made against him or her.',
         },
     ],
+    languages: ['Common', 'Telepathy 5'],
+    weapons: [{name: 'Mace', range: 'melee', damage: '1d8'}],
+    armor: {name: 'Chain Mail', bonus: 6, speedPenalty: -1, light: false},
+    shield: {name: 'Heavy Shield', bonus: 2},
+    items: [
+        'Backpack',
+        'Holy Symbol',
+        'Rope',
+        'Ritual Book',
+        'Rations - 10 days',
+        'Flint & Steel',
+        'Bedroll',
+        'Robes',
+        'Candle - 10',
+        '"Awesome Sweater" +1 AC Body Armor (Custom-tailored. Portrays a Beach Sunset w/Palm Trees.)',
+    ],
+    currency: [{name: 'Gold', amount: 25}],
 };
