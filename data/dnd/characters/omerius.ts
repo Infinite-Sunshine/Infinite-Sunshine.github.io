@@ -30,10 +30,6 @@ export default // Omerius
         will: [{type: 'class', bonus: 2}, {type: 'race', bonus: 4}],
     },
     speed: {base: 6},
-    senses: {
-        passiveInsight: 17,
-        passivePerception: 15,
-    },
     hitPoints: {
         current: 27,
         max: 27,
