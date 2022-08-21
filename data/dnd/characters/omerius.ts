@@ -1,7 +1,7 @@
 export default // Omerius
 {
     name: 'Omerius',
-    level: 2,
+    level: 3,
     gender: 'Male',
     height: `6'3"`,
     weight: '200lbs',
@@ -31,11 +31,10 @@ export default // Omerius
     },
     speed: {base: 6},
     hitPoints: {
-        current: 27,
-        max: 27,
+        current: 32,
+        max: 32,
     },
     healingSurges: {
-        value: 6,
         perDay: 7,
     },
     actionPoints: 1,
@@ -109,15 +108,20 @@ export default // Omerius
                 effect: 'Each target gains a +4 power bonus to Will until the end of your next turn.',
             },
             {
-                name: 'Guardian of Faith',
+                name: 'Cascade of Light',
                 classification: 'Cleric Attack 1',
                 flavorText:
-                    'You conjure a ghostly guardian, indistinct except for a glowing shield emblazoned with your deity’s symbol. A burst of radiance erupts from it to sear foes that move next to it.',
-                keywords: '✦ Conjuration, Divine, Implement, Radiant',
+                    'A burst of divine radiance sears your foe.',
+                keywords: '✦ Divine, Implement, Radiant',
                 action: 'Standard Action',
                 attackType: 'Ranged',
-                range: '5',
-                effect: 'You conjure a guardian that occupies 1 square within range. Every round, you can move the guardian 3 squares as a move action. The guardian lasts until the end of the encounter. Any creature that ends its turn next to the conjured guardian is subject to a Wisdom vs. Fortitude attack. On a hit, the attack deals 1d8 + Wisdom modifier radiant damage.',
+                range: '10',
+                trigger:
+                    'An enemy hits or misses you with an attack against your Will',
+                target: 'One creature',
+                attack: 'Wisdom vs. Will',
+                hit: '3d8 + Wisdom modifier radiant damage, and the target gains vulnerability 5 to all your attacks (save ends).',
+                miss: 'Half damage, and the target gains no vulnerability.'
             },
             {
                 name: 'Return from Death’s Door',
@@ -196,6 +200,20 @@ export default // Omerius
                 target: 'One creature',
                 attack: 'Wisdom vs. Reflex',
                 hit: '2d8 + Wisdom modifier radiant damage. You conjure a shield bearer in an unoccupied square adjacent to the target. The shield bearer lasts until the end of your next turn. The shield bearer occupies 1 square, and allies can move through it as if it were an ally. While adjacent to the shield bearer, any ally gains a +2 power bonus to all defenses.',
+            },
+            {
+                name: 'Daunting Light',
+                classification: 'Cleric Attack 3',
+                flavorText:
+                    'A burning column of light engulfs your foe. Its brilliance burns and hinders your foe’s defense for a short time.',
+                keywords: '✦ Divine , Implement , Radiant',
+                action: 'Standard Action',
+                attackType: 'Ranged',
+                range: '10',
+                target: 'One creature',
+                attack: 'Wisdom vs. Reflex',
+                hit: '2d10 + Wisdom modifier radiant damage.',
+                effect: 'One ally you can see gains combat advantage against the target until the end of your next turn.',
             },
         ],
     },

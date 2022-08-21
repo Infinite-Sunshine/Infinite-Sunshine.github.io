@@ -540,12 +540,12 @@ function HitPoints({hitPoints}) {
     );
 }
 
-function HealingSurges({healingSurges}) {
+function HealingSurges({healingSurges, hitPoints}) {
     return (
         <>
-            {healingSurges?.value && (
+            {hitPoints?.max && (
                 <Text p={1}>
-                    <b>Healing surge value:</b> {healingSurges.value}
+                    <b>Healing surge value:</b> {Math.floor(hitPoints.max / 4)}
                 </Text>
             )}
             {healingSurges?.perDay && (
@@ -727,7 +727,7 @@ export default function Character({character}) {
                 spacing={2}
             >
                 <HitPoints hitPoints={character.hitPoints}/>
-                <HealingSurges healingSurges={character.healingSurges}/>
+                <HealingSurges healingSurges={character.healingSurges} hitPoints={character.hitPoints}/>
                 <ActionPoints actionPoints={character.actionPoints}/>
                 <Speed armorPenalty={armorPenalty} speed={character.speed}/>
             </SimpleGrid>
