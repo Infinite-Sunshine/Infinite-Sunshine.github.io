@@ -161,32 +161,33 @@ function AbilityScores({abilities}) {
     );
 }
 
-function Defenses({
-                      character: {
-                          armor = {bonus: 0, light: true},
-                          level,
-                          shield = {bonus: 0},
-                          defenseSpecialMods: {
-                              ac: acMods,
-                              fort: fortMods,
-                              ref: refMods,
-                              will: willMods
-                          } = {
-                              ac: [],
-                              fort: [],
-                              ref: [],
-                              will: []
-                          }
-                      },
-                      abilities: {
-                          DEX: {mod: dexMod} = {mod: 0},
-                          INT: {mod: intMod} = {mod: 0},
-                          STR: {mod: strMod} = {mod: 0},
-                          CON: {mod: conMod} = {mod: 0},
-                          WIS: {mod: wisMod} = {mod: 0},
-                          CHA: {mod: chaMod} = {mod: 0},
-                      }
-                  }) {
+function Defenses(props) {
+    const {
+        character: {
+            armor = {bonus: 0, light: true},
+            level,
+            shield = {bonus: 0},
+            defenseSpecialMods: {
+                ac: acMods,
+                fort: fortMods,
+                ref: refMods,
+                will: willMods
+            } = {
+                ac: [],
+                fort: [],
+                ref: [],
+                will: []
+            }
+        },
+        abilities: {
+            DEX: {mod: dexMod} = {mod: 0},
+            INT: {mod: intMod} = {mod: 0},
+            STR: {mod: strMod} = {mod: 0},
+            CON: {mod: conMod} = {mod: 0},
+            WIS: {mod: wisMod} = {mod: 0},
+            CHA: {mod: chaMod} = {mod: 0},
+        }
+    } = props;
     const tenPlusHalf = 10 + Math.floor(level / 2);
     const {bonus: armorBonus = 0, light: isLightArmor = true} = armor;
     const {bonus: shieldBonus = 0} = shield;
@@ -225,18 +226,20 @@ function Defenses({
     );
 }
 
-function Skills({
-                    abilities: {
-                        DEX: {modPlusHalf: dexMod} = {modPlusHalf: 0},
-                        INT: {modPlusHalf: intMod} = {modPlusHalf: 0},
-                        STR: {modPlusHalf: strMod} = {modPlusHalf: 0},
-                        CON: {modPlusHalf: conMod} = {modPlusHalf: 0},
-                        WIS: {modPlusHalf: wisMod} = {modPlusHalf: 0},
-                        CHA: {modPlusHalf: chaMod} = {modPlusHalf: 0},
-                    },
-                    armorPenalty,
-                    skillMods,
-                }) {
+function Skills(props) {
+    const {
+        abilities: {
+            DEX: {modPlusHalf: dexMod} = {modPlusHalf: 0},
+            INT: {modPlusHalf: intMod} = {modPlusHalf: 0},
+            STR: {modPlusHalf: strMod} = {modPlusHalf: 0},
+            CON: {modPlusHalf: conMod} = {modPlusHalf: 0},
+            WIS: {modPlusHalf: wisMod} = {modPlusHalf: 0},
+            CHA: {modPlusHalf: chaMod} = {modPlusHalf: 0},
+        },
+        armorPenalty,
+        skillMods,
+    } = props;
+
     function getSkillMod(name) {
         return skillMods?.[name]?.length ? skillMods[name].reduce((sum, {bonus}) => typeof bonus === 'number' ? bonus + sum : sum, 0) : 0
     }
@@ -353,6 +356,11 @@ function Power({power, type}) {
                 )}
                 {power.range && <Text p={1}>{power.range}</Text>}
             </Flex>
+            {power.requirement && (
+                <Text p={1}>
+                    <b>Requirement:</b> {power.requirement}
+                </Text>
+            )}
             {power.trigger && (
                 <Text p={1}>
                     <b>Trigger:</b> {power.trigger}

@@ -1,10 +1,76 @@
 export default // Hisoka
 {
     name: 'Hisoka',
-    race: 'Aladrin',
+    level: 3,
+    gender: 'Male',
+    height: `6'3"`,
+    weight: '140lbs',
+    race: 'Eladrin',
     class: 'Rogue/Sorcerer',
+    size: 'Medium',
+    age: 83,
     alignment: 'Chaotic Good',
-    level: '2',
+    deity: 'None',
+    affiliations: 'Star-shaped Birthmark Crew',
+    paragonPath: '',
+    epicDestiny: '',
+    XP: '',
+    abilityScores: {
+        STR: 8,
+        CON: 11,
+        DEX: 18,
+        INT: 14,
+        WIS: 11,
+        CHA: 16,
+    },
+    defenseSpecialMods: {
+        ac: [],
+        fort: [],
+        ref: [{type: 'class', bonus: 1}],
+        will: [{type: 'class', bonus: 1}, {type: 'race', bonus: 1}],
+    },
+    speed: {base: 6},
+    hitPoints: {
+        current: 33,
+        max: 33,
+    },
+    healingSurges: {
+        perDay: 6,
+    },
+    actionPoints: 1,
+    skillMods: {
+        Arcana: [{
+            type: 'trained',
+            bonus: 5
+        }, {
+            type: 'race',
+            bonus: 2
+        }],
+        Diplomacy: [{
+            type: 'trained',
+            bonus: 5
+        },],
+        Acrobatics: [{
+            type: 'trained',
+            bonus: 5
+        }],
+        History: [{
+            type: 'race',
+            bonus: 2
+        }],
+        Streetwise: [{
+            type: 'trained',
+            bonus: 5
+        }],
+        Stealth: [{
+            type: 'trained',
+            bonus: 5
+        }],
+        Perception: [{
+            type: 'trained',
+            bonus: 5
+        }],
+    },
     powers: {
         atWill: [
             {
@@ -18,7 +84,7 @@ export default // Hisoka
                 attackType: 'Dexterity, Martial, Weapon',
                 range: 'Weapon',
                 target: 'One Creature',
-                trigger: 'You must be wielding a light blade',
+                requirement: 'You must be wielding a light blade',
             },
             {
                 name: 'Chaos Bolt',
@@ -28,7 +94,7 @@ export default // Hisoka
                 keywords: 'Arcane, Implement',
                 action: 'Standard Action',
                 attackType: 'Ranged',
-                range: '10',
+                range: 10,
                 target: 'One Creature',
                 attack: 'Charisma vs. Will',
                 hit: '1d10 + Charisma modifier psychic damage. Level 21: 2d10 + Charisma modifier psychic damage.',
@@ -53,7 +119,7 @@ export default // Hisoka
                 keywords: 'Arcane, Implement, Radiant',
                 action: 'Standard Action',
                 attackType: 'Ranged',
-                range: '10',
+                range: 10,
                 attack: 'Charisma vs. Will',
                 target: 'One creature',
                 hit: '6d6 + Charisma modifier radiant damage.',
@@ -72,7 +138,7 @@ export default // Hisoka
                 action: 'Standard Action',
                 attack: 'Charisma vs. Will',
                 attackType: 'Close burst',
-                range: '3',
+                range: 3,
                 target: 'One or two creatures in burst',
             },
             {
@@ -92,6 +158,19 @@ export default // Hisoka
                 action: 'Move action',
                 attackType: 'Personal',
             },
+            {
+                name: `Ice Dragon's Teeth`,
+                classification: 'Sorcerer Attack 3',
+                flavorText:
+                    'Shards of ice like the teeth of a dragon explode among your foes, chilling and slowing them.',
+                hit: '2d8 + Charisma modifier cold damage, and the target is slowed until the end of your next turn.',
+                keywords: 'Arcane, Implement, Cold',
+                action: 'Standard Action',
+                attack: 'Charisma vs. Reflex',
+                attackType: 'Close burst',
+                range: 'Burst 1 within 10 squares',
+                target: 'Each creature in burst',
+            },
         ],
     },
     feats: [
@@ -105,4 +184,24 @@ export default // Hisoka
             benefit: 'Change sneak attack benefit from D6 to D8',
         },
     ],
+    languages: ['Common', 'Elven'],
+    weapons: [{name: 'Dagger', range: 'melee', damage: '1d4'}, {name: 'Crossbow', range: 10, damage: '1d6'}],
+    items: [
+        'Backpack',
+        'Belt Pouch',
+        'Rope - 50 feet',
+        'Waterskin',
+        'Rations - 10 days',
+        'Flint & Steel',
+        'Bedroll',
+        'Dagger - 5',
+        'Candle - 10',
+        'Sunrods - 2',
+        'Crossbow',
+        'Sling',
+        'Crossbow bolts - 95',
+        'Shuriken - 25',
+        `Alchemist's acid`
+    ],
+    currency: [{name: 'Gold', amount: 50}],
 };
